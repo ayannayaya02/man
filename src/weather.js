@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ready:false});
 
   function handleResponse(response) {
     console.log(response.data);
@@ -19,7 +19,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
       wind: response.data.speed,
-      city: response.data.name,
+      city: response.data.name
     });
   }
 
