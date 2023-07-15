@@ -3,13 +3,12 @@ import "./weather.css";
 import WeatherInfo from "./weatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
-
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ready:false});
 
   function handleResponse(response) {
-    console.log(response.data);
+
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
